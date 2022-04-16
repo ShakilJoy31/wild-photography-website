@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
+import Loading from '../SheredComponents/Loading';
 
 const SignUp = () => {
     const [
@@ -33,8 +34,11 @@ const SignUp = () => {
         event.preventDefault();
         createUserWithEmailAndPassword(email, password); 
     }
+    const navigate = useNavigate(); 
+    if(user){
+        navigate('/home'); 
+    }
 
-    console.log(user); 
     return (
         <div className='w-50 mx-auto mt-5'>
             <form onSubmit={handleOnSubmitButton}>
@@ -61,6 +65,15 @@ const SignUp = () => {
                 <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1" />
                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <div>
+                    {
+                        loading && <Loading></Loading>
+                    }
+
+                    {
+                        error && <p className='text-danger text-center'>{error.message}</p>
+                    }
                 </div>
                 <div>
                     <p className='fs-5'>Already have an Account? <span><Link className='text-decoration-none' to='/login'>Log In</Link></span></p>

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../firebase.init';
+import Loading from '../SheredComponents/Loading';
 
 const Login = () => {
     const [
@@ -21,10 +22,20 @@ const Login = () => {
         setPassword(event.target.value); 
     }
 
+    const location = useLocation(); 
+    const navigate = useNavigate(); 
+    const from = location?.state?.from?.pathname || '/'; 
+
+    
     const handleOnSubmitButton = event =>{
         event.preventDefault(); 
         signInWithEmailAndPassword(email, password); 
     }
+
+    if(user){
+        navigate(from, {replace: true}); 
+    }
+    
 
 
     return (
@@ -45,6 +56,14 @@ const Login = () => {
                 </div>
                 <div>
                     <p className='fs-5'>New to Wild Photography World? <span><Link className='text-decoration-none' to='/signup'>Sign Up</Link></span></p>
+                </div>
+                <div>
+                    {
+                        loading && <Loading></Loading>
+                    }
+                    {
+                        error && <p className='text-danger text-center'>{error.message}</p>
+                    }
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
