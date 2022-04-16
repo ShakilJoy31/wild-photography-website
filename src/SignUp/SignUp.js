@@ -78,7 +78,7 @@ const SignUp = () => {
                 <div>
                     <p className='fs-5'>Already have an Account? <span><Link className='text-decoration-none' to='/login'>Log In</Link></span></p>
                 </div>
-                <button type="submit" class="btn w-50 d-block mx-auto btn-primary">Log In</button>
+                <button type="submit" class="btn w-50 d-block mx-auto btn-primary">Sign Up</button>
             </form>
         </div>
     );
