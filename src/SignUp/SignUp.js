@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../firebase.init';
 
 const SignUp = () => {
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+      ] = useCreateUserWithEmailAndPassword(auth);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
@@ -23,11 +31,10 @@ const SignUp = () => {
 
     const handleOnSubmitButton = event => {
         event.preventDefault();
-        console.log(email);
-        console.log(password);
-        console.log(name);
-        console.log(address);
+        createUserWithEmailAndPassword(email, password); 
     }
+
+    console.log(user); 
     return (
         <div className='w-50 mx-auto mt-5'>
             <form onSubmit={handleOnSubmitButton}>
@@ -58,7 +65,7 @@ const SignUp = () => {
                 <div>
                     <p className='fs-5'>Already have an Account? <span><Link className='text-decoration-none' to='/login'>Log In</Link></span></p>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn w-50 d-block mx-auto btn-primary">Log In</button>
             </form>
         </div>
     );
