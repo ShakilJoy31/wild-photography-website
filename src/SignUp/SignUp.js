@@ -1,16 +1,22 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
 import Loading from '../SheredComponents/Loading';
 
 const SignUp = () => {
+    const [sendEmailVerification, sendingEmail, sendingEmailError] = useSendEmailVerification(
+        auth
+      );
+
+
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
-      ] = useCreateUserWithEmailAndPassword(auth);
+      ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
@@ -30,9 +36,10 @@ const SignUp = () => {
         setAddress(event.target.value);
     }
 
-    const handleOnSubmitButton = event => {
+    const handleOnSubmitButton = async (event) => {
         event.preventDefault();
         createUserWithEmailAndPassword(email, password); 
+        await sendEmailVerification(); 
     }
     const navigate = useNavigate(); 
     if(user){
@@ -74,9 +81,12 @@ const SignUp = () => {
                     {
                         error && <p className='text-danger text-center'>{error.message}</p>
                     }
+                    
                 </div>
                 <div>
                     <p className='fs-5'>Already have an Account? <span><Link className='text-decoration-none' to='/login'>Log In</Link></span></p>
+
+                    
                 </div>
                 <button type="submit" class="btn w-50 d-block mx-auto btn-primary">Sign Up</button>
             </form>

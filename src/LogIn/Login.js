@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSignInWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../firebase.init';
 import Loading from '../SheredComponents/Loading';
@@ -11,6 +11,10 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+
+    const [sendPasswordResetEmail, sendingResetMail, ResetMailError] = useSendPasswordResetEmail(
+        auth
+      );
 
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
 
@@ -37,6 +41,12 @@ const Login = () => {
         event.preventDefault();
         signInWithEmailAndPassword(email, password);
     }
+
+    const handlePasswordResetButton = async () =>{
+        await sendPasswordResetEmail(email); 
+    }
+    
+
 
     const handleSignInWithGoogleButton = () => {
         signInWithGoogle(); 
@@ -70,6 +80,8 @@ const Login = () => {
                 </div>
                 <div>
                     <p className='fs-5'>New to Wild Photography World? <span><Link className='text-decoration-none' to='/signup'>Sign Up</Link></span></p>
+
+                    <p className='fs-5'>Forget password? <span><Link onClick={handlePasswordResetButton} className='text-decoration-none' to='/login'>Click here</Link></span></p>
                 </div>
                 <div>
                     {
@@ -77,6 +89,12 @@ const Login = () => {
                     }
                     {
                         error && <p className='text-danger text-center'>{error.message}</p>
+                    }
+                    {
+                        ResetMailError && <p className='text-danger text-center'>{ResetMailError.message}</p>
+                    }
+                    {
+                        sendingResetMail && <Loading></Loading>
                     }
                 </div>
                 <button type="submit" class="btn btn-primary w-50 d-block mx-auto">Log In</button>

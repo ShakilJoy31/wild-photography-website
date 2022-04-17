@@ -18,10 +18,40 @@ const Blog = () => {
                 </div>
             </div>
 
-            <div className='bg-danger container mt-5' style={{height: '2px'}}></div>
+            <div className='container mt-5' style={{ height: '2px', backgroundColor: 'palevioletred' }}></div>
 
-            <div>
+            <div className='container border border-3 p-3 rounded-3 mt-4 border-primary'>
+                <div>
+                    <h2 className='text-info'>Why I am using Firebase: </h2>
+                    <p>
+                        <span className='fs-3 text-success'>Answer: </span>  Firebase is Authentication system that belongs with Google. Suppose someone makes a website in where people can go, get some information and do something. To let them do what ever they want the developer or creator of that website need to know that person. To know that person we use firebase authentication system made by Google. We use firebase to provide a better user experience. <br /> So to know that person or to verify that person or to provide a better user experience we use firebase.
+                    </p>
+                    <h2 className='text-info'>What Other options I have to implement authentication. </h2>
+                    <p>
+                        <span className='fs-3 text-success'>Answer: </span> There is obviously other option to implement authentication. The react-firebase-hooks makes the authentication system easier and fun to use by the developer. <br />
+                        <span style={{ color: 'sienna' }} className='fs-4 text-danger'> We can implement authentication by:</span> <br /> <br /><span style={{ color: 'sienna' }} className='fs-5'>Password-based authentication. </span>
+                        <br />
+                        <span style={{ color: 'sienna' }} className='fs-5'>Biometric authentication</span>
+                        <br />
+                        <span style={{ color: 'sienna' }} className='fs-5'>Fingerprint authentication</span> <span style={{ color: 'sienna' }} className='fs-5'>Speaker Recognition</span>
+                        <br />
+                        <span style={{ color: 'sienna' }} className='fs-5'>Eye Scanners</span>
+                    </p>
+                </div>
 
+            </div>
+
+            <div className='container mt-5' style={{height: '2px', backgroundColor: 'palevioletred'}}></div>
+
+            <div className='container border border-3 p-3 rounded-3 border-primary mt-5'>
+                <h1 className='text-info'>The other services provided by firebase are written below: </h1>
+                <p> <br /> <br /><span style={{ color: 'sienna' }} className='fs-5'>1. Hosting </span>
+                        <br />
+                        <span style={{ color: 'sienna' }} className='fs-5'>2. Cloud Firestore</span>
+                        <br />
+                        <span style={{ color: 'sienna' }} className='fs-5'>3. Authentication</span> <br /> <span style={{ color: 'sienna' }} className='fs-5'>4. Cloud Storage</span>
+                        <br />
+                        <span style={{ color: 'sienna' }} className='fs-5'>5. Google Analytics</span></p>
             </div>
         </div>
     );
