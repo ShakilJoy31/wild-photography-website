@@ -12,6 +12,7 @@ const Home = () => {
     console.log(animals); 
     return (
         <div>
+            <h1 className='d-flex justify-content-center text-info container'>The Pictures that have made me to be Called to Take Wild Picture. </h1>
             <div className='mt-5 container'>
             <div className='row g-4'>
             {

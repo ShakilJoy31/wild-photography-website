@@ -53,8 +53,8 @@ const Login = () => {
 
 
     return (
-        <div className='w-50 mx-auto mt-5'>
-            <form onSubmit={handleOnSubmitButton} className='border p-4 rounded'>
+        <div className='w-50 mx-auto mt-5 border p-4 rounded'>
+            <form onSubmit={handleOnSubmitButton}>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email address</label>
                     <input onBlur={handleEmailButton} type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
@@ -81,6 +81,7 @@ const Login = () => {
                 </div>
                 <button type="submit" class="btn btn-primary w-50 d-block mx-auto">Log In</button>
             </form>
+            
             <button onClick={handleSignInWithGoogleButton} type="submit" class="btn mt-5 btn-primary w-100 d-block mx-auto">Log In With Google</button>
             {
                 googleError && <p className='mt-3 text-danger text-center'>{googleError?.message}</p>
