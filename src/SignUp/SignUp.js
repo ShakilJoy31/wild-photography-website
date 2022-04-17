@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
 import Loading from '../SheredComponents/Loading';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 const SignUp = () => {
     const [sendEmailVerification, sendingEmail, sendingEmailError] = useSendEmailVerification(
@@ -40,6 +42,7 @@ const SignUp = () => {
         event.preventDefault();
         createUserWithEmailAndPassword(email, password); 
         await sendEmailVerification(); 
+        toast('Varification link is sent to your given email address'); 
     }
     const navigate = useNavigate(); 
     if(user){
@@ -81,6 +84,14 @@ const SignUp = () => {
                     {
                         error && <p className='text-danger text-center'>{error.message}</p>
                     }
+
+                    {
+                        sendingEmail && <Loading></Loading>
+                    }
+
+                    {
+                        sendingEmailError && <p className='text-danger text-center'>{sendingEmailError.message}</p>
+                    }
                     
                 </div>
                 <div>
@@ -90,6 +101,7 @@ const SignUp = () => {
                 </div>
                 <button type="submit" class="btn w-50 d-block mx-auto btn-primary">Sign Up</button>
             </form>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

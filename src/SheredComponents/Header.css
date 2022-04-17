@@ -1,0 +1,7 @@
+@media screen and (max-width: 576px) {
+    .make-responsive{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+}

@@ -4,6 +4,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import logo from '../../src/images/logo/logo.jpg'
 import auth from '../firebase.init';
+import './Header.css'; 
 
 const Header = () => {
     const [user, loading, error] = useAuthState(auth);
@@ -16,7 +17,7 @@ const Header = () => {
             <nav class="navbar navbar-light bg-light container">
                 <div class="container-fluid">
                     <Link to='/home' class="navbar-brand"><img style={{width: '80px', borderRadius: '10px'}} src={logo} alt="" /></Link>
-                    <form class="d-flex">
+                    <form>
                         <div>
                         <Link className='btn btn-outline-success me-3' to='/about'>About</Link>
 
@@ -29,7 +30,6 @@ const Header = () => {
                         }
 
                         <Link className='btn btn-outline-success me-3' to='/signup'>Sign Up</Link>
-                        
                         </div>
                     </form>
                 </div>

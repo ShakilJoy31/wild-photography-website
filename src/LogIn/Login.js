@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 import auth from '../firebase.init';
 import Loading from '../SheredComponents/Loading';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const [
@@ -14,7 +16,7 @@ const Login = () => {
 
     const [sendPasswordResetEmail, sendingResetMail, ResetMailError] = useSendPasswordResetEmail(
         auth
-      );
+    );
 
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
 
@@ -40,20 +42,30 @@ const Login = () => {
     const handleOnSubmitButton = event => {
         event.preventDefault();
         signInWithEmailAndPassword(email, password);
+        toast('Loging in'); 
+
     }
 
-    const handlePasswordResetButton = async () =>{
-        await sendPasswordResetEmail(email); 
+
+
+    const handlePasswordResetButton = async () => {
+        if (user) {
+            toast('Password reset email is sent'); 
+            await sendPasswordResetEmail(email);
+        }
+        else {
+            toast("Enter your email Address first");
+        }
     }
-    
+
 
 
     const handleSignInWithGoogleButton = () => {
-        signInWithGoogle(); 
+        signInWithGoogle();
     }
 
     const handleSignInWithGithubButton = () => {
-        signInWithGithub(); 
+        signInWithGithub();
     }
 
     if (user || googleUser || githubUser) {
@@ -96,6 +108,7 @@ const Login = () => {
                     {
                         sendingResetMail && <Loading></Loading>
                     }
+
                 </div>
                 <button type="submit" class="btn btn-primary w-50 d-block mx-auto">Log In</button>
             </form>
@@ -115,6 +128,7 @@ const Login = () => {
             {
                 githubLoading && <p><Loading></Loading></p>
             }
+            <ToastContainer/>
         </div>
     );
 };
