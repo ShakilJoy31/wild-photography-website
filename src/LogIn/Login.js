@@ -46,7 +46,7 @@ const Login = () => {
         signInWithGithub(); 
     }
 
-    if (user) {
+    if (user || googleUser || githubUser) {
         navigate(from, { replace: true });
     }
 
@@ -81,7 +81,7 @@ const Login = () => {
                 </div>
                 <button type="submit" class="btn btn-primary w-50 d-block mx-auto">Log In</button>
             </form>
-            
+
             <button onClick={handleSignInWithGoogleButton} type="submit" class="btn mt-5 btn-primary w-100 d-block mx-auto">Log In With Google</button>
             {
                 googleError && <p className='mt-3 text-danger text-center'>{googleError?.message}</p>
