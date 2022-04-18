@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyC047WvnfrU3NBGqh94e7lzpWOfbsXzrJ0",
-  authDomain: "wild-photography-world-ab073.firebaseapp.com",
-  projectId: "wild-photography-world-ab073",
-  storageBucket: "wild-photography-world-ab073.appspot.com",
-  messagingSenderId: "654010662491",
-  appId: "1:654010662491:web:e4cec8ad95bf8d1a7ec97e"
+  apiKey: "AIzaSyA4qcJD_INr6NX6HPbhzY-sKPN9z6dkfQg",
+  authDomain: "wild-photography-world.firebaseapp.com",
+  projectId: "wild-photography-world",
+  storageBucket: "wild-photography-world.appspot.com",
+  messagingSenderId: "129020173334",
+  appId: "1:129020173334:web:f6ad986f2e51f152cf2937"
 };
 
 // Initialize Firebase

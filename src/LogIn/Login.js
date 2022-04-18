@@ -120,7 +120,7 @@ const Login = () => {
                 googleLoading && <p><Loading></Loading></p>
             }
 
-            <button onClick={handleSignInWithGithubButton} type="submit" class="btn mt-5 btn-primary w-100 d-block mx-auto">Log In Github</button>
+            <button onClick={handleSignInWithGithubButton} type="submit" class="btn mt-5 btn-primary w-100 d-block mx-auto">Log In with Github</button>
             {
                 githubError && <p className='mt-3 text-danger text-center'>{githubError?.message}</p>
             }
