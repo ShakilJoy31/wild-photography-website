@@ -48,9 +48,9 @@ const Login = () => {
     }
 
 
-
+    console.log(user); 
     const handlePasswordResetButton = async () => {
-        if (user) {
+        if (email) {
             toast('Password reset email is sent');
             await sendPasswordResetEmail(email);
         }
@@ -90,9 +90,9 @@ const Login = () => {
                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
                 </div>
                 <div>
-                    <p className='fs-5'>New to Wild Photography World? <span><Link className='text-decoration-none' to='/signup'>Sign Up</Link></span></p>
+                    <p className='fs-5 text-center'>New to Wild Photography World? <span><Link className='text-decoration-none' to='/signup'>Sign Up</Link></span></p>
 
-                    <p className='fs-5'>Forget password? <span><Link onClick={handlePasswordResetButton} className='text-decoration-none' to='/login'>Click here</Link></span></p>
+                    <p className='fs-5 text-center'>Forget password? <span><Link onClick={handlePasswordResetButton} className='text-decoration-none' to='/login'>Click here</Link></span></p>
                 </div>
                 <div>
                     {

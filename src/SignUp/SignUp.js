@@ -51,7 +51,7 @@ const SignUp = () => {
 
     return (
         <div className='footer-fallen-down'>
-            <div className='w-50 mx-auto mt-5'>
+            <div className='w-50 mx-auto mt-5 border p-3 rounded'>
             <form onSubmit={handleOnSubmitButton}>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Name</label>
@@ -96,7 +96,7 @@ const SignUp = () => {
                     
                 </div>
                 <div>
-                    <p className='fs-5'>Already have an Account? <span><Link className='text-decoration-none' to='/login'>Log In</Link></span></p>
+                    <p className='fs-5 text-center'>Already have an Account? <span><Link className='text-decoration-none' to='/login'>Log In</Link></span></p>
 
                     
                 </div>

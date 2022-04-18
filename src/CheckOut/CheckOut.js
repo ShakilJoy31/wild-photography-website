@@ -5,8 +5,8 @@ import Footer from '../SheredComponents/Footer';
 const CheckOut = () => {
     return (
         <div>
-            <div className='mt-4'>
-            <h2 className='text-info'>This is checkout. You can Now see the Full picture of a individual photo.  </h2>
+            <div className='mt-4 text-center'>
+            <h2 className='text-info'>This is checkout. You can Now see another individual photo.</h2>
         </div>
 
         <div className='container fixed-image'>

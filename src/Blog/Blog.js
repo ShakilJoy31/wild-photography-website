@@ -48,8 +48,8 @@ const Blog = () => {
                 <p> <br /> <br /><span style={{ color: 'sienna' }} className='fs-5'>1. Hosting </span>
                         <br />
                         <span style={{ color: 'sienna' }} className='fs-5'>2. Cloud Firestore</span>
-                        <br />
-                        <span style={{ color: 'sienna' }} className='fs-5'>3. Authentication</span> <br /> <span style={{ color: 'sienna' }} className='fs-5'>4. Cloud Storage</span>
+                        
+                        <br /> <span style={{ color: 'sienna' }} className='fs-5'>4. Cloud Storage</span>
                         <br />
                         <span style={{ color: 'sienna' }} className='fs-5'>5. Google Analytics</span></p>
             </div>
