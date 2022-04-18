@@ -2,7 +2,7 @@
 Wild Photography World
 
 # Live Website Link: 
-https://wild-photography-world.web.app/
+https://wild-photography-world.firebaseapp.com/
 
 # Features this website has
 1. You can be logged to this website in
