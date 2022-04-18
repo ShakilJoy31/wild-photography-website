@@ -50,7 +50,8 @@ const SignUp = () => {
     }
 
     return (
-        <div className='w-50 mx-auto mt-5'>
+        <div className='footer-fallen-down'>
+            <div className='w-50 mx-auto mt-5'>
             <form onSubmit={handleOnSubmitButton}>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Name</label>
@@ -102,6 +103,7 @@ const SignUp = () => {
                 <button type="submit" class="btn w-50 d-block mx-auto btn-primary">Sign Up</button>
             </form>
             <ToastContainer></ToastContainer>
+        </div>
         </div>
     );
 };

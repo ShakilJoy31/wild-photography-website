@@ -3,3 +3,12 @@
     border-radius: 10px;
     padding: 3px;
 }
+.name-color{
+    color:dodgerblue;
+}
+.place-color{
+    color: darkgoldenrod;
+}
+.rating-color{
+    color:tomato;
+} 

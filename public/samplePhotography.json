@@ -2,20 +2,26 @@
 [
     {
       "id": 1,
-      "name": "Elephant With Sun Shine",
+      "name": "Taking Elephant Photography",
       "img": "https://images.pexels.com/photos/247431/pexels-photo-247431.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", 
       "ratings" : "8.6", 
+      "price": "400",
+      "description": "I Can take the photo of elephant in anywhere",
       "capturedPlace":"Dhaka"
       }, 
     {
       "id": 2,
-      "name": "Monkey On The Tree",
+      "name": "Monkey Photography in the Forest",
+      "price": "500",
+      "description": "I Can take the photo of monkey in anywhere and in forest",
       "img": "https://images.pexels.com/photos/1829979/pexels-photo-1829979.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", 
       "ratings" : "9", 
       "capturedPlace":"Chittagong"
       }, 
     {
       "id": 3,
+      "price": "300",
+      "description": "I have a great experience of taking deer photo",
       "name": "Deer Without Life Partner",
       "img": "https://images.pexels.com/photos/1130434/pexels-photo-1130434.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260", 
       "ratings" : "9.4", 
@@ -23,13 +29,17 @@
       }, 
     {
       "id": 4,
-      "name": "Lizzerd Waiting",
+      "price": "800",
+      "description": "You know, taking a lizzered photo is not so easy. But I can make it happen",
+      "name": "Lizzerd Photography",
       "img": "https://images.pexels.com/photos/312826/pexels-photo-312826.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", 
       "ratings" : "8.6", 
       "capturedPlace":"Naogaon"
       }, 
     {
       "id": 5,
+      "price": "450",
+      "description": "It's amezing wo take a photo of Zebra",
       "name": "Team Of Zebra",
       "img": "https://images.pexels.com/photos/2862070/pexels-photo-2862070.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260", 
       "ratings" : "9", 
@@ -37,6 +47,8 @@
       }, 
     {
       "id": 6,
+      "price": "400",
+      "description": "I Can take the photo of money in anywhere. But it may not be drinking at that time",
       "name": "Drinking Monkey",
       "img": "https://images.pexels.com/photos/1188998/pexels-photo-1188998.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", 
       "ratings" : "8", 
@@ -44,13 +56,17 @@
       }, 
     {
       "id": 7,
-      "name": "Nill Gai",
+      "price": "460",
+      "description": "Nill gai is going to be finished. But I can take the photo of their as well.",
+      "name": "Nill Gai photography",
       "img": "https://images.pexels.com/photos/3329812/pexels-photo-3329812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", 
       "ratings" : "9.5", 
       "capturedPlace":"Khulna"
       }, 
     {
       "id": 8,
+      "price": "900",
+      "description": "I Can take the photo of it in anywhere. I am experienced on it. ",
       "name": "Angry Leopard",
       "img": "https://images.pexels.com/photos/625727/pexels-photo-625727.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", 
       "ratings" : "10", 
@@ -58,6 +74,8 @@
       }, 
     {
       "id": 9,
+      "price": "460",
+      "description": "I Can take the photo of it in anywhere and I am experienced on it.",
       "name": "Alone Squirrel",
       "img": "https://images.pexels.com/photos/460775/pexels-photo-460775.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", 
       "ratings" : "9.8", 

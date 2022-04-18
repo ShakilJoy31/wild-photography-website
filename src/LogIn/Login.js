@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import auth from '../firebase.init';
 import Loading from '../SheredComponents/Loading';
 import 'react-toastify/dist/ReactToastify.css';
+import './Login.css';
 
 const Login = () => {
     const [
@@ -42,7 +43,7 @@ const Login = () => {
     const handleOnSubmitButton = event => {
         event.preventDefault();
         signInWithEmailAndPassword(email, password);
-        toast('Loging in'); 
+        toast('Loging in');
 
     }
 
@@ -50,7 +51,7 @@ const Login = () => {
 
     const handlePasswordResetButton = async () => {
         if (user) {
-            toast('Password reset email is sent'); 
+            toast('Password reset email is sent');
             await sendPasswordResetEmail(email);
         }
         else {
@@ -71,11 +72,9 @@ const Login = () => {
     if (user || googleUser || githubUser) {
         navigate(from, { replace: true });
     }
-
-
-
     return (
-        <div className='w-50 mx-auto mt-5 border p-4 rounded'>
+        <div className='footer-fallen-down'>
+            <div className='w-50 mx-auto mt-3 border p-3 rounded'>
             <form onSubmit={handleOnSubmitButton}>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -128,7 +127,8 @@ const Login = () => {
             {
                 githubLoading && <p><Loading></Loading></p>
             }
-            <ToastContainer/>
+            <ToastContainer />
+        </div>
         </div>
     );
 };

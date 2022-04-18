@@ -5,7 +5,7 @@ import './About.css';
 const About = () => {
     return (
         <div>
-            <div>
+            <div className='mt-4'>
                 <div className='d-flex justify-content-center'>
                 <img className='w-25 make-round' src={myPicture} alt="" />
                 </div>

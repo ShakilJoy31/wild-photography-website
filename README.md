@@ -16,7 +16,7 @@ hjhklmlfghbdih
 2. React Firebase. 
 3. React Firebase Hooks. 
 4. React Toasts
-5. Bootstrap (A CSS framework)
+5. Bootstrap (A CSS framework) and react-bootstrap were used. 
 
 
 
