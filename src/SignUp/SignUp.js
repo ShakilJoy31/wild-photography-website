@@ -52,6 +52,7 @@ const SignUp = () => {
     return (
         <div className='footer-fallen-down'>
             <div className='w-50 mx-auto mt-5 border p-3 rounded'>
+            <h2 className='text-primary text-center'>Please Sign Up</h2>
             <form onSubmit={handleOnSubmitButton}>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Name</label>
